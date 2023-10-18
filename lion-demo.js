@@ -12,13 +12,13 @@ export class LionDemo extends LitElement {
 
   constructor() {
     super();
-    this.header = 'Hey there';
-    this.counter = 5;
+    this.header = 'Hey dev';
+    this.counter = 0;
   }
 
   render() {
     return html`
-      <h2>${this.header} Nr. ${this.counter}!</h2>
+      <h1>${this.header}! Increment is at Nr: ${this.counter}</h1>
       <lion-tooltip has-arrow>
         <lion-button slot="invoker" @click=${() => {this.counter += 1; console.log(this.counter);}}>increment</lion-button>
         <span slot="content"> +1 </span>
