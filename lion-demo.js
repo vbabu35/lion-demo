@@ -5,14 +5,6 @@ import '@lion/ui/define/lion-button.js';
 import '@lion/ui/define/lion-tooltip.js';
 
 export class LionDemo extends LitElement {
-  static styles = css`
-    :host {
-      display: block;
-      padding: 25px;
-      color: var(--lion-demo-text-color, #000);
-    }
-  `;
-
   static properties = {
     header: { type: String },
     counter: { type: Number },
@@ -24,19 +16,15 @@ export class LionDemo extends LitElement {
     this.counter = 5;
   }
 
-  __increment() {
-    this.counter += 1;
-  }
-
   render() {
     return html`
       <h2>${this.header} Nr. ${this.counter}!</h2>
       <lion-tooltip has-arrow>
-        <lion-button slot="invoker" @click=${this.__increment}>increment</lion-button>
+        <lion-button slot="invoker" @click=${() => {this.counter += 1; console.log(this.counter);}}>increment</lion-button>
         <span slot="content"> +1 </span>
       </lion-tooltip>
     `;
   }
 }
 
-window.customElements.define('lion-demo', LionDemo);
+customElements.define('lion-demo', LionDemo);
