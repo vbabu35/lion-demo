@@ -10,7 +10,7 @@
     "start": "web-dev-server"
   },
   "dependencies": {
-    "ing-web": "latest",
+    "@lion/ui": "^0.4.1",
     "lit": "^2.0.2"
   },
   "devDependencies": {
