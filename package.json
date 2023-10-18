@@ -1,6 +1,6 @@
 {
   "name": "lion-demo",
-  "description": "Web demo that consumes the lion web component library, and showcases a button & tooltip as a starting point for demo purposes.",
+  "description": "Web app that consumes the lion web component library, and showcases a button & tooltip as a starting point for demo purposes.",
   "author": "the lion team",
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,7 @@
     "start": "web-dev-server"
   },
   "dependencies": {
-    "@lion/ui": "^0.4.1",
+    "ing-web": "latest",
     "lit": "^2.0.2"
   },
   "devDependencies": {
