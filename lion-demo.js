@@ -1,8 +1,8 @@
 import { html, LitElement } from 'lit';
 
 // As a side-effect this way of importing defines the custom elements, eg. <lion-button>, ready for use
-import '@lion/ui/define/lion-button.js';
-import '@lion/ui/define/lion-tooltip.js';
+import '@lion/ui/define/lion-combobox.js';
+import '@lion/ui/define/lion-option.js';
 
 export class LionDemo extends LitElement {
   static properties = {
@@ -11,16 +11,18 @@ export class LionDemo extends LitElement {
   };
   constructor() {
     super();
-    this.header = 'Hey dev';
-    this.counter = 0;
+    this.listboxData = ['Mango', 'Apple', 'Guava'];
   }
   render() {
     return html`
-      <h1>${this.header}! Increment is at Nr: ${this.counter}</h1>
-      <lion-tooltip has-arrow>
-        <lion-button slot="invoker" @click=${() => {this.counter += 1; console.log(this.counter);}}>increment</lion-button>
-        <span slot="content"> +1 </span>
-      </lion-tooltip>
+    <lion-combobox name="combo" .modelValue=${this.listboxData[0]} autocomplete="none" label="Default">
+    ${
+      this.listboxData.map(
+        (entry, i) => html`
+          <lion-option .choiceValue="${entry}">${entry}</lion-option>
+        `,
+    )}
+  </lion-combobox>
     `;
   }
 }
